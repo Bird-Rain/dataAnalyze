@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt # 데이터 시각화를 위한 라이브러라
 
 data = pd.read_csv("Data.csv") # 데이터 파일 읽기
 print(data.isnull().sum()) # 퍼블리셔와 출시연도에 결측치 발견. 둘 다 이번 분석에 활용 X -> 드롭처리
-data = data.drop(["index", "Publisher", "Year"], axis=1) # 인덱스와 퍼블리셔 드롭처리 (인덱스와 랭크는 거의 동일한 데이터, 퍼블리셔는 이번 분석에 활용 X)
+data = data.drop(["index", "Publisher", "Year", "Game Title"], axis=1) # 인덱스와 퍼블리셔 드롭처리 (인덱스와 랭크는 거의 동일한 데이터, 게임 타이틀, 퍼블리셔는 이번 분석에 활용 X)
 print(data.isnull().sum()) # 결측치 X
 
 numeric_data = data.select_dtypes(include=["int64", "float64"]) # 숫자형태의 데이터만 선택
@@ -34,7 +34,7 @@ plt.show() # 그래프 표시
 # 수익성 높은 플랫폼
 
 
-# 인기 장르 파트
+# 인기 장르 파트 (플랫폼 파트 수정하여 사용)
 print(data["Genre"].unique()) # 순위에 존재하는 플랫폼 확인
 popular_Genre = data["Genre"].value_counts() # 전체 리스트에서 플랫폼별 사용횟수 카운트
 plt.figure(figsize=(12, 6)) # 창 크기 조절
