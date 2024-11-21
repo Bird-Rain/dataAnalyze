@@ -21,7 +21,7 @@ plt.show() # 그래프 표시
  
  
 # 인기 플랫폼 파트
-print(data["Platform"].unique()) # 순위에 존재하는 플랫폼 확인
+print(data["Platform"].unique()) # 데이터에 존재하는 플랫폼 종류 확인
 popular_Platform = data["Platform"].value_counts() # 전체 리스트에서 플랫폼별 사용횟수 카운트
 plt.figure(figsize=(12, 6)) # 창 크기 조절
 plt.bar(popular_Platform.index, popular_Platform.values, color='skyblue') # 막대 그래프 생성
