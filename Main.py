@@ -33,8 +33,19 @@ plt.show() # 그래프 표시
 
 # 수익성 높은 플랫폼
 
+
 # 인기 장르 파트
+print(data["Genre"].unique()) # 순위에 존재하는 플랫폼 확인
+popular_Genre = data["Genre"].value_counts() # 전체 리스트에서 플랫폼별 사용횟수 카운트
+plt.figure(figsize=(12, 6)) # 창 크기 조절
+plt.bar(popular_Genre.index, popular_Genre.values, color='skyblue') # 막대 그래프 생성
+plt.title("Number of Games per Genre", fontsize=16) # 타이틀 (한글 깨짐)
+plt.xlabel("Genre", fontsize=14) # x 레이블
+plt.ylabel("Count", fontsize=14) # y 레이블 
+plt.grid(axis='y', linestyle='--', alpha=0.7) # 가로줄 추가
+plt.show() # 그래프 표시
 
 # 수익성 높은 장르
+
 
 
