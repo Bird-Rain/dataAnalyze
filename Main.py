@@ -18,34 +18,18 @@ plt.figure(figsize=(12, 9)) # 창 크기 조절
 sns.heatmap(corr_data) # 상관계수를 사용해 히트맵 생성
 plt.title("corr HeatMap") # 한글 사용시 글자 깨짐.
 plt.show() # 그래프 표시
- 
- 
-# 인기 플랫폼 파트
-print(data["Platform"].unique()) # 데이터에 존재하는 플랫폼 종류 확인
-popular_Platform = data["Platform"].value_counts() # 전체 리스트에서 플랫폼별 사용횟수 카운트
-plt.figure(figsize=(12, 6)) # 창 크기 조절
-plt.bar(popular_Platform.index, popular_Platform.values, color='skyblue') # 막대 그래프 생성
-plt.title("Number of Games per Platform", fontsize=16) # 타이틀 (한글 깨짐)
-plt.xlabel("Platform", fontsize=14) # x 레이블
-plt.ylabel("Count", fontsize=14) # y 레이블 
-plt.grid(axis='y', linestyle='--', alpha=0.7) # 가로줄 추가
-plt.show() # 그래프 표시
-
-# 수익성 높은 플랫폼
 
 
 # 인기 장르 파트 (플랫폼 파트 수정하여 사용)
-print(data["Genre"].unique()) # 순위에 존재하는 플랫폼 확인
-popular_Genre = data["Genre"].value_counts() # 전체 리스트에서 플랫폼별 사용횟수 카운트
+print(data["Genre"].unique()) # 데이터에 존재하는 장르 종류 확인
+popular_Genre = data["Genre"].value_counts() # 전체 리스트에서 장르별 게임 수 카운트
 plt.figure(figsize=(12, 6)) # 창 크기 조절
-plt.bar(popular_Genre.index, popular_Genre.values, color='skyblue') # 막대 그래프 생성
+plt.bar(popular_Genre.index, popular_Genre.values, color='skyblue') # 막대 그래프 생성 x-> 장르 이름 y-> 해당 장르의 게임이 순위에 등록된 수
 plt.title("Number of Games per Genre", fontsize=16) # 타이틀 (한글 깨짐)
-plt.xlabel("Genre", fontsize=14) # x 레이블
-plt.ylabel("Count", fontsize=14) # y 레이블 
+plt.xlabel("Genre", fontsize=14) # x 레이블 설정
+plt.ylabel("Count", fontsize=14) # y 레이블 설정
 plt.grid(axis='y', linestyle='--', alpha=0.7) # 가로줄 추가
 plt.show() # 그래프 표시
-
-# 수익성 높은 장르
 
 
 
